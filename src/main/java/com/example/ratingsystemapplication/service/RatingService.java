@@ -98,7 +98,7 @@ public class RatingService {
 
 	public Float calculateAggRating(UserRating userRating) {
 		if (userRating.getSumOfRatings() != 0) {
-			float aggRating = (userRating.getSumOfMaxRatingUserCount() * userRating.getTotalUserRated()) / userRating.getSumOfRatings();
+			float aggRating = userRating.getSumOfRatings() / (userRating.getTotalUserRated() * 1.0f);
 			return aggRating;
 		}
 		return null;
